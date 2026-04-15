@@ -1,0 +1,27 @@
+name: CI-Build-Otomatis
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kodingan
+        uses: actions/checkout@v3
+
+      - name: Login ke Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build dan Push ke Docker Hub
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags:
+                xcutelabel/sanditel-app:latest
+                xcutelabel/sanditel-app:v${{ github.run_number }}
