@@ -15,13 +15,13 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build dan Push ke Docker Hub
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags:
-                xcutelabel/sanditel-app:latest
-                xcutelabel/sanditel-app:v${{ github.run_number }}
+          tags: |
+            xcutelabel/sanditel-app:latest
+            xcutelabel/sanditel-app:v${{ github.run_number }}
