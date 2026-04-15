@@ -1,0 +1,8 @@
+services:
+  sanditel:
+    domains:
+      - "10.11.1.112"
+      - "localhost"
+      - "127.0.0.1"
+    target:
+      url: "http://app"

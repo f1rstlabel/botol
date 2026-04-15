@@ -1,2 +1,0 @@
-# sanditel
-Inventory Gudang Sanditel

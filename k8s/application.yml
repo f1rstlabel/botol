@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sanditel-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # GANTI: Pakai URL repo GitHub Anda yang asli
+    repoURL: 'https://github.com/f1rstlabel/botol.git'
+    targetRevision: HEAD
+    # GANTI: Nama folder di dalam repo tempat file .yaml disimpan
+    path: k8s 
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default # Aplikasi akan dipasang di namespace default
+  syncPolicy:
+    automated: # Ini agar otomatis update saat Anda git push
+      prune: true
+      selfHeal: true
