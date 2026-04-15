@@ -12,7 +12,7 @@
                         <div class="p-5">
                             <div class="text-center mb-4">
                                 <h1 class="h4 text-gray-900">Aplikasi Pengadaan Barang</h1>
-                                <span class="text-muted">Login</span>
+                                <span class="text-muted">Login Dulu ya!</span>
                             </div>
                             <?= $this->session->flashdata('pesan'); ?>
                             <?= form_open('', ['class' => 'user']); ?>
