@@ -57,7 +57,7 @@ spec:
     spec:
       containers:
       - name: php-app
-        image: docker.io/library/sanditel-master-ci3-php1:latest
+        image: sanditel-master-ci3-php1:v1
         imagePullPolicy: Never
         ports:
         - containerPort: 80
