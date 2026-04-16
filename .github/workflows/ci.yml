@@ -25,3 +25,4 @@ jobs:
           tags: |
             xcutelabel/sanditel-app:latest
             xcutelabel/sanditel-app:v${{ github.run_number }}
+          no-cache: true

@@ -109,6 +109,8 @@ $route['dataasset/save_barcode'] ['POST'] = 'data_asset/save_barcode';
 $route['dataasset/index_kategori'] = 'Data_asset/index_kategori';  // Route untuk halaman utama kategori
 $route['dataasset/detail/(:any)'] = 'Data_asset/detail/$1';  // Route untuk detail kategori
 $route['dataasset/tambah_by_kategori'] = 'Data_asset/tambah_by_kategori';
+$route['dataasset/get_asset_info'] = 'Data_asset/get_asset_info';
+
 
 $route['barcode/scan'] = 'barcode/scan';
 $route['barcode/process'] = 'barcode/process';

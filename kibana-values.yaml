@@ -1,0 +1,14 @@
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "200m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+elasticsearchHosts: "https://elasticsearch-master:9200"
+elasticsearchInternalUser: "elastic"
+elasticsearchInternalPassword: "PW4WGIFtfTJRpOyF"
+# Abaikan sertifikat SSL karena kita pakai self-signed internal
+kibanaConfig:
+  kibana.yml: |
+    elasticsearch.ssl.verificationMode: none
