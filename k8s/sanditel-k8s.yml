@@ -1,5 +1,5 @@
 ---
-# 1. DATABASE (MySQL)
+# 1. DATABASE (MySQL) dengan Persistent Storage
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,6 +27,14 @@ spec:
           value: "secretpw"
         ports:
         - containerPort: 3306
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        hostPath:
+          path: /mnt/data/mysql
+          type: DirectoryOrCreate
 ---
 apiVersion: v1
 kind: Service
